@@ -47,7 +47,7 @@ function gatherPictures() {
 								strUpdateDiv = ''
 								for (i=0; i < entries.length; i++) {
 									strFile = cordova.file.externalRootDirectory + "/" + entries[i].fullPath
-									strUpdateDiv = strUpdateDiv + '<img style="display:block; width:85%; dheight:50%;" id="largeImage" src="' + strFile + '" />\n\n';
+									strUpdateDiv = strUpdateDiv + '<img style="display:block; width:85%; padding:0;" id="largeImage" src="' + strFile + '" />\n\n';
 								}
 							}
 							mainDisplay.innerHTML = strUpdateDiv;

@@ -69,20 +69,36 @@ function resOnError(e){
 
 function resolveOnSuccess(entry){
 	var d = new Date();
+
 	var strYear = d.getFullYear();
 	var strMonth = d.getMonth() + 1;
 	var strDate = d.getDate();
+	var strHour = d.getHours();
 	if (strMonth < 10) strMonth = "0" + strMonth;
 	if (strDate < 10) strDate = "0" + strDate;
 	var strMyDate = (strYear + "-" + strMonth + "-" + strDate);
-	var n = d.getTime();
-	var newFileName = n + ".jpg";
-	var myFolderApp = "ADHD";
+
+	var strMinutes = d.getMinutes();
+	var strSeconds = d.getSeconds();
+	var strMeridian = "AM";
+	if(strHour > 12){
+		strMeridian = "PM";
+		strHour = strHour - 12;
+	}
+	if (strHour < 10) strHour = "0" + strHour;
+	if (strMinutes < 10) strMinutes = "0" + strMinutes;
+	if (strSeconds < 10) strSeconds = "0" + strSeconds;
+	var strMyTime = (strHour + "-" + strMinutes + "-" + strSeconds + " " + strMeridian);
+
+	var newFileName = strMyTime + ".jpg";
+	//var n = d.getTime();
+	//var newFileName = n + ".jpg";
+	//var myFolderApp = "ADHD";
 
 	//window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys)  {
 	window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function(fileSys)  {
 		fileSys.getDirectory("pictures/" + strRootFolder + "/" + strMyDate, {create: true, exclusive: false}, function(directory) {
-			entry.moveTo(directory, entry.name,  successMove,  resOnError);
+			entry.moveTo(directory, newFileName,  successMove,  resOnError);
        },
        resOnError);
     },
@@ -90,9 +106,14 @@ function resolveOnSuccess(entry){
 }
 
 function successMove(entry) {
-	largeImage.src = entry.fullPath
+	gatherPictures();
+/*
+	alert(entry.fullPath);
+	var strFile = cordova.file.externalRootDirectory + "/" + entry.fullPath
+	largeImage.src = strFile
 	alert(entry.fullPath)
    sessionStorage.setItem('imagepath', entry.fullPath);
+*/
 }
 
 
