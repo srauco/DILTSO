@@ -288,14 +288,14 @@ body#mapbody{
 
 .footerDiv{
     height: 90px !important;
-    background-color: #ffc107;
+    background-color: #0799FF;
     width:100%;
     text-align:center;
     spadding:10px;
 }
 
 .footerParent{
-    background-color:#ffc107;
+    background-color:#0799FF;
     height:40px;
     margin-top:0px;
     padding:15px 0 0 0;
@@ -309,6 +309,6 @@ body#mapbody{
 .btnCamera {
     margin:0 auto; 
     padding:10px;
-    background-color:#ffc107;
+    background-color:#0799FF;
     color:#FFF !important;
 }

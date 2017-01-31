@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Color theme for statusbar -->
     <meta name="theme-color" content="#ff0000">
-    <title>ADHD Helper</title>
+    <title>DILTSO</title>
     <link rel="stylesheet" href="css/framework7.material.css">
     <link rel="stylesheet" href="css/framework7.material.colors.css">
     <link rel="stylesheet" href="css/default-style.css">
@@ -24,7 +24,6 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-
 </head>
 
 <body>
@@ -79,7 +78,7 @@
                         <div class="navbar-inner">
                             <div class="left"><a href="#" class="open-panel link icon-only"><i class="material-icons">menu</i></a></div>
                             <div class="left">
-                            	<div style="font-size:.9em; line-height: 1.1em">ADHD Helper<br/><span style="font-size:.75em;" id="divCurrentSelectedDate" name="divCurrentSelectedDate"></span></div>
+                            	<div style="font-size:.9em; line-height: 1.1em">Reminder Pic<br/><span style="font-size:.75em;" id="divCurrentSelectedDate" name="divCurrentSelectedDate"></span></div>
                             </div>
                             <div class="right">
                                 <a href="" class="link icon-only"><i class="material-icons">search</i></a>
@@ -90,16 +89,21 @@
 
                     <div class="page-content home">
                     	<ul id="dirList" data-role="listview" data-inset="true"></ul>
-                    	<div id="mainDisplay" name="mainDisplay" style="position: relative; height:95%;">
-                    		<div style="font=weight:bold;text-align: center; position: absolute; left: 50%; top: 30%; transform: translate(-50%, -30%);;">No pictures for this date</div>
+                    	<div id="mainDisplay" name="mainDisplay" style="position: relative; height:95%; text-align:center;">
+
+                    		<div style="font=weight:bold;text-align: center; position: absolute; left: 50%; top: 30%; transform: translate(-50%, -30%);;"><img height="50%" width="50%" src="img/loading.gif"></div>
+
                     	</div>
-										 	<center><img style="display:none;width:50%;height:50%;" id="smallImage" src="" /></center>
+
+<!--
+											<center><img style="display:none;width:50%;height:50%;" id="smallImage" src="" /></center>
 											<center><img style="display:none; width:50%;height:50%;" id="largeImage" src="" /></center>
+-->
                     </div>
 
                 </div>
 
-								<div id="footerParent" name="footerParent" class="footerParent ui-bar ui-bar-a sliding" style="background-color:#ffc107; height:40px;margin-top:0px;padding:15px 0 0 0;position: absolute; bottom: 0px; width: 100%; text-align:center">
+								<div id="footerParent" name="footerParent" class="footerParent ui-bar ui-bar-a sliding" style="background-color:#0799FF; height:40px;margin-top:0px;padding:15px 0 0 0;position: absolute; bottom: 0px; width: 100%; text-align:center">
 									<div class="footerDiv" id="footerDiv" name="footerDiv">
 										<a id="img" href="" onclick="capturePhoto();">
 											<center><i id="btnCamera" name="btnCamera" class="fa fa-camera fa-2x btnCamera" style="color:#FFF !important;" ></i></center>

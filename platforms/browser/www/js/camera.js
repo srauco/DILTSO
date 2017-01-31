@@ -83,7 +83,6 @@ function resolveOnSuccess(entry){
 	window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function(fileSys)  {
 		fileSys.getDirectory("pictures/" + strRootFolder + "/" + strMyDate, {create: true, exclusive: false}, function(directory) {
 			entry.moveTo(directory, entry.name,  successMove,  resOnError);
-			alert(entry.fullPath);
        },
        resOnError);
     },
@@ -91,6 +90,7 @@ function resolveOnSuccess(entry){
 }
 
 function successMove(entry) {
+	largeImage.src = entry.fullPath
 	alert(entry.fullPath)
    sessionStorage.setItem('imagepath', entry.fullPath);
 }

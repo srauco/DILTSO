@@ -2,7 +2,7 @@
 <widget id="com.phonegap.diltso" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>DILTSO</name>
     <description>
-        Did I Leave The Stove On? Reminders for youe peace of mind
+        Did I Leave The Stove On? Reminders for your peace of mind
     </description>
     <author email="info@roccomputing.com" href="http://phonegap.com">
         ROC Computing

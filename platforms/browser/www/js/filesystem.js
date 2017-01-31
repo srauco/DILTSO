@@ -34,11 +34,9 @@ function cleanOldFolders() {
 }
 
 function gatherPictures() {
-
-	alert(2);
-
+	var strUpdateDiv = '<div style="font=weight:bold;text-align: center; position: absolute; left: 50%; top: 30%; transform: translate(-50%, -30%);;">No pictures for this date</div>'
 	window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory,
-		function(fileSys) {
+		function(fileSys){
 			fileSys.getDirectory("pictures/" + strRootFolder + "/" + strCurrentDate, {create: false, exclusive: false},
 				function(directory) {
 					var directoryReader = directory.createReader();
@@ -46,19 +44,19 @@ function gatherPictures() {
 						function(entries) {
 							if(entries.length > 0){
 								var i;
+								strUpdateDiv = ''
 								for (i=0; i < entries.length; i++) {
-									alert(entries[i].name);
+									strFile = cordova.file.externalRootDirectory + "/" + entries[i].fullPath
+									strUpdateDiv = strUpdateDiv + '<img style="display:block; width:85%; dheight:50%;" id="largeImage" src="' + strFile + '" />\n\n';
 								}
-							} else {
-								alert("empty");
 							}
+							mainDisplay.innerHTML = strUpdateDiv;
 						},
 						function(error){alert(error.code);}
 					);
 				},
 			resOnError);
 		},
-		resOnError
+		null
 	);
-
 }

@@ -4,7 +4,6 @@ function getSettings(){
 	getLastDate();
 	divCurrentSelectedDate.innerHTML = getFolderDate();
 	strCurrentDate = getFolderDate();
-	alert(1);
 	gatherPictures();
 //	getColors();
 //	setColors();
@@ -47,7 +46,6 @@ function getColors(strItem, strColor){
 			eval("str" + strItem + " = localStorage.getItem('" + strColor + "')");
 		}
 	}
-	//alert(strMainColor);
 }
 function setColors(){
 	footerDiv.style.backgroundColor = strMainColor;
