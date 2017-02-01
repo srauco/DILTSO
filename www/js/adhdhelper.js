@@ -2,13 +2,12 @@
 
 var isAndroid = Framework7.prototype.device.android === true;
 var $$ = Dom7;
-var intSaveDays;
-var strLastDate;
-var strCurrentDate;
 
-var strMainColor;
-
-var strRootFolder = "ROC ADHD Helper"
+var intSaveDays;							// Number of days to keep on file before deletion
+var strLastDate;							// Last available folder based on today and intSaveDays
+var strCurrentDate;							// Currently selected date. App start = today
+var strRootFolder = "ReminderPics"			// Base picture folder name
+var strMainColor;							// Base color of scheme
 
 
 // Wait for device API libraries to load
@@ -19,12 +18,16 @@ document.addEventListener("deviceready",onDeviceReady,false);
 //
 
 function onDeviceReady() {
-	getSettings();
-	createFolder("");
-	createFolder(getFolderDate());
-	cleanOldFolders();
-	setCurrentPictures();
-	setCameraSettings();
+	createFolder(""); 									// Create base folder if it doesn't exist
+	strCurrentDate = getFolderDate();					// Gets today's date on startup
+	setCameraSettings();								// Set up camera basics
+	getSaveDays();										// Load number of days to save into intSaveDays
+	getLastDate();										// Sets strLastDate to last avai;ab;e folder date
+	divCurrentSelectedDate.innerHTML = strCurrentDate 	// Set date on header();
+	gatherPictures();									// Gets today's pictures, if any
+	cleanOldFolders();									// Deletes folders older than intSaveDays
+//	getColors();
+//	setColors();
 }
 
 

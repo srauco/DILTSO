@@ -27,10 +27,6 @@ function getLastDate(){
 	strLastDate = getFolderDate(d.setDate(d.getDate() - intSaveDays));
 }
 
-function setCurrentPictures(strFolder){
-	divCurrentSelectedDate.innerHTML = getFolderDate(strFolder)
-}
-
 function getColors(strItem, strColor){
 	if(strItem == null){
 		strMainColor = localStorage.getItem("MainColor");

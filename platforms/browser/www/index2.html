@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#ff0000">
+    <title>DILTSO</title>
+    <link rel="stylesheet" href="css/framework7.material.css">
+    <link rel="stylesheet" href="css/framework7.material.colors.css">
+    <link rel="stylesheet" href="css/default-style.css">
+    <link rel="stylesheet" href="css/my-app.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/icon.png">
+    <link rel="apple-touch-icon-precomposed" href="img/icon.png">
+   	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" href="css/style.css">
+    <script language="javascript" src="js/settings.js"></script>
+		<script language="javascript" src="js/filesystem.js"></script>
+		<script language="javascript" src="js/camera.js"></script>
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+</head>
+
+<body>
+    <div class="panel-overlay"></div>
+    <div class="panel panel-left panel-cover">
+        <div class="list-block">
+            <ul class="menu">
+                <header>
+                    <img class="responsive" style="padding:0px !important" src="img/profile.jpg" />
+                </header>
+                <li>
+                    <a href="profile.html" class="item-link item-content">
+                        <div class="item-media"><i class="material-icons menu">person</i></div>
+                        <div class="item-inner menu">
+                            <div class="item-title menu">Profile</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html" class="item-link item-content">
+                        <div class="item-media"><i class="material-icons menu">notifications</i></div>
+                        <div class="item-inner menu">
+                            <div class="item-title menu">Notifications</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html" class="item-link item-content">
+                        <div class="item-media"><i class="material-icons menu">settings</i></div>
+                        <div class="item-inner menu">
+                            <div class="item-title menu">Settings</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html" class="item-link item-content">
+                        <div class="item-media"><i class="material-icons menu">power_settings_new</i></div>
+                        <div class="item-inner menu">
+                            <div class="item-title menu">Sign out</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed">
+                <div data-page="index" class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="left"><a href="#" class="open-panel link icon-only"><i class="material-icons">menu</i></a></div>
+                            <div class="left">
+                            	<div style="font-size:.9em; line-height: 1.1em">Reminder Pic<br/><span style="font-size:.75em;" id="divCurrentSelectedDate" name="divCurrentSelectedDate"></span></div>
+                            </div>
+                            <div class="right">
+                                <a href="" class="link icon-only"><i class="material-icons">search</i></a>
+                                <a href="" data-popover=".popover-more-home" class="link icon-only open-popover"><i class="material-icons">more_vert</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page-content home">
+                    	<ul id="dirList" data-role="listview" data-inset="true"></ul>
+                    	<div id="mainDisplay" name="mainDisplay" style="position: relative; height:95%; text-align:center;">
+
+                    		<div class="imgDisplayDiv"><img class="imgDisplay" src="img/1.jpg" /></div><br />
+                    		<div class="imgDisplayDiv"><img class="imgDisplay" src="img/2.jpg" /></div><br />
+
+
+
+
+                    	</div>
+
+<!--
+											<center><img style="display:none;width:50%;height:50%;" id="smallImage" src="" /></center>
+											<center><img style="display:none; width:50%;height:50%;" id="largeImage" src="" /></center>
+-->
+                    </div>
+
+                </div>
+
+								<div id="footerParent" name="footerParent" class="footerParent ui-bar ui-bar-a sliding" style="background-color:#0799FF; height:40px;margin-top:0px;padding:15px 0 0 0;position: absolute; bottom: 0px; width: 100%; text-align:center">
+									<div class="footerDiv" id="footerDiv" name="footerDiv">
+										<a id="img" href="" onclick="capturePhoto();">
+											<center><i id="btnCamera" name="btnCamera" class="fa fa-camera fa-2x btnCamera" style="color:#FFF !important;" ></i></center>
+										</a>
+									</div>
+								</div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="popover popover-more-home">
+        <div class="popover-angle"></div>
+        <div class="popover-inner">
+            <div class="list-block">
+                <ul>
+                    <li><a href="index.html" class="list-button item-link home">Settings</a></li>
+                    <li><a href="index2.html" class="list-button item-link home">Help Online</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/framework7.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/adhdhelper.js"></script>
+
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<ssscript src="js/jquery.mobile-1.4.5.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+
+</body>
+
+</html>

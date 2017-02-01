@@ -312,3 +312,27 @@ body#mapbody{
     background-color:#0799FF;
     color:#FFF !important;
 }
+
+.imgDisplay {
+    box-shadow: 7px 7px 7px #BBB;
+    max-width:100%;
+    padding: 0 !important;
+}
+
+.imgDisplayDiv {
+    position: relative; 
+    left: 50%;
+    transform: translate(-50%);
+    width:80%; 
+}
+
+.imgDisplayDesc {
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.imgDisplayRule {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
