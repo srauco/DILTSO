@@ -62,6 +62,9 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="FileOpener">
+        <param name="android-package" value="com.phonegap.plugins.fileopener.FileOpener" />
+    </feature>
     <name>DILTSO</name>
     <description>
         Did I Leave The Stove On? Reminders for your peace of mind

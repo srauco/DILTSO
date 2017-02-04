@@ -166,5 +166,14 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "com.phonegap.plugins.fileopener": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/antonioJASR/FileOpener.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

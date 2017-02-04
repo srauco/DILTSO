@@ -63,6 +63,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "com.phonegap.plugins.fileopener": {
+            "PACKAGE_NAME": "com.phonegap.diltso"
         }
     },
     "dependent_plugins": {

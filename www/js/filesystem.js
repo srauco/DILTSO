@@ -47,12 +47,12 @@ function gatherPictures() {
 								var i;
 								strUpdateDiv = ''
 								for (i=0; i < entries.length; i++) {
+									alert(entries[i].toURI());
 									strFile = cordova.file.externalRootDirectory + "/" + entries[i].fullPath
 									strUpdateDiv = strUpdateDiv + '<div class="imgDisplayDiv">';
-									strUpdateDiv = strUpdateDiv + '<img class="imgDisplay" src="' + strFile + '"><br />'
+									strUpdateDiv = strUpdateDiv + '<img class="imgDisplay" src="' + strFile + '" onclick="openPicture(\'' + entries[i].fullPath + '\');"><br />'
 									strUpdateDiv = strUpdateDiv + '<span class="imgDisplayDesc">' + entries[i].name.replaceAll("-", ":").replace(".jpg", "") + '</span>';
 									strUpdateDiv = strUpdateDiv + '</div><br /><hr class="imgDisplayRule">';
-//									strUpdateDiv = strUpdateDiv + '<img style="box-shadow: 5px 5px 2px grey; display:block; width:85%; padding:0 0 10px 25px;" id="largeImage" src="' + strFile + '" /><br />\n\n';
 								}
 								strUpdateDiv = strUpdateDiv + "<br /><br /><br />"
 							}
@@ -65,6 +65,17 @@ function gatherPictures() {
 		},
 		null
 	);
+}
+
+function openPicture(objPicture){
+
+	alert(objPicture)
+
+
+fileOpener.open("file:///" + objPicture)
+
+
+	alert("done");
 }
 
 String.prototype.replaceAll = function(search, replacement) {

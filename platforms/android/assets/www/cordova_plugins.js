@@ -517,6 +517,14 @@ module.exports = [
             "navigator.notification",
             "navigator"
         ]
+    },
+    {
+        "id": "com.phonegap.plugins.fileopener.FileOpener",
+        "file": "plugins/com.phonegap.plugins.fileopener/www/fileopener.js",
+        "pluginId": "com.phonegap.plugins.fileopener",
+        "clobbers": [
+            "window.plugins.fileOpener"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -542,7 +550,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "3.2.2",
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.3",
-    "cordova-plugin-whitelist": "1.2.2"
+    "cordova-plugin-whitelist": "1.2.2",
+    "com.phonegap.plugins.fileopener": "1.0.0"
 };
 // BOTTOM OF METADATA
 });

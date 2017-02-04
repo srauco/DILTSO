@@ -84,6 +84,12 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-file-opener2": {
+            "PACKAGE_NAME": "com.phonegap.diltso"
+        },
+        "com.phonegap.plugins.fileopener": {
+            "PACKAGE_NAME": "com.phonegap.diltso"
         }
     },
     "dependent_plugins": {},
@@ -690,6 +696,22 @@
                 "navigator.notification",
                 "navigator"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js",
+            "id": "cordova-plugin-file-opener2.FileOpener2",
+            "pluginId": "cordova-plugin-file-opener2",
+            "clobbers": [
+                "cordova.plugins.fileOpener2"
+            ]
+        },
+        {
+            "file": "plugins/com.phonegap.plugins.fileopener/www/fileopener.js",
+            "id": "com.phonegap.plugins.fileopener.FileOpener",
+            "pluginId": "com.phonegap.plugins.fileopener",
+            "clobbers": [
+                "window.plugins.fileOpener"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -713,6 +735,8 @@
         "cordova-plugin-splashscreen": "3.2.2",
         "cordova-plugin-statusbar": "2.1.3",
         "cordova-plugin-vibration": "2.1.3",
-        "cordova-plugin-whitelist": "1.2.2"
+        "cordova-plugin-whitelist": "1.2.2",
+        "cordova-plugin-file-opener2": "2.0.7",
+        "com.phonegap.plugins.fileopener": "1.0.0"
     }
 }
