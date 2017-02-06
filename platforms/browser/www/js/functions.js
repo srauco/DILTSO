@@ -1,5 +1,3 @@
-
-
 function getDate(strDate){
 	if(strDate == null) {
 		var d = new Date()
@@ -30,4 +28,11 @@ function getTime(){
 	if (strSeconds < 10) strSeconds = "0" + strSeconds;
 	var strMyTime = (strHour + "-" + strMinutes + "-" + strSeconds + " " + strMeridian);
 	return strMyTime;
+}
+
+function getLastDate(){
+	var d = new Date();
+	d.setDate(d.getDate()-intSaveDays)
+	strPassDate = (d.getMonth() + 1 + "-" + d.getDate() + "-" + d.getFullYear())
+	strLastDate = getFolderDate(strPassDate);
 }

@@ -1,12 +1,3 @@
-var pictureSource;   // picture source
-var destinationType; // sets the format of returned value
-var objOldEntry;
-
-function setCameraSettings(){
-	pictureSource = navigator.camera.PictureSourceType;
-	destinationType = 1 //navigator.camera.DestinationType;
-	saveToPhotoAlbum = false;
-}
 
 // Called when a photo is successfully retrieved
 function onPhotoDataSuccess(imageData) {

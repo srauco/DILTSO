@@ -1,12 +1,8 @@
 
-function getSettings(){
-	getSaveDays();
-	getLastDate();
-	divCurrentSelectedDate.innerHTML = getFolderDate();
-	strCurrentDate = getFolderDate();
-	gatherPictures();
-//	getColors();
-//	setColors();
+function setCameraSettings(){
+	pictureSource = navigator.camera.PictureSourceType;
+	destinationType = 1 //navigator.camera.DestinationType;
+	saveToPhotoAlbum = false;
 }
 
 function getSaveDays(intDays){
@@ -20,12 +16,10 @@ function getSaveDays(intDays){
 		localStorage.setItem("SaveDays", intDays);
 		intSaveDays = intDays;
 	}
+	var d = new Date();
+	strPassDate = (d.getMonth() + 1 + "-" + d.getDate() + "-" + d.getFullYear())
 }
 
-function getLastDate(){
-	var d = new Date();
-	strLastDate = getFolderDate(d.setDate(d.getDate() - intSaveDays));
-}
 
 function getColors(strItem, strColor){
 	if(strItem == null){
@@ -50,6 +44,9 @@ function setColors(){
 	btnCamera.style.color = "#FFF";
 }
 
-function compareDates(strDate) {
-	return (strLastDate >= strDate)
+function compareDates(strPassedDate) {
+	return (strLastDate >= strPassedDate)
 }
+
+
+
